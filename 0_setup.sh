@@ -34,11 +34,11 @@ git clone https://github.com/bahdah/LCD-show.git
 
 chmod -R 755 LCD-show
 
-pushd /LCD-show
+pushd ./LCD-show
   bash MHS35-show
 popd
 
-rm -rf /LCD-show
+rm -rf ./LCD-show
 
 epoch_now=$(date +%s)
 mv /etc/dhcpcd.conf "/etc/${epoch_now}_dhcpcd.conf"
