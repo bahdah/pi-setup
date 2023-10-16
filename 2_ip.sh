@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Description: Install display driver and add static IP address
-# Usage: sudo bash 0_setup.sh
+# Description: Add static IP address
+# Usage: sudo bash 2_ip.sh
 # Author: Bahdah Shin
 # Date: 20231013
 # Version: 0.0.1
@@ -23,22 +23,6 @@ fi
 
 # main script
 check_sudo
-
-# system update
-apt update
-apt upgrade -y
-
-apt install git vim iperf3 -y
-
-git clone https://github.com/bahdah/LCD-show.git
-
-chmod -R 755 LCD-show
-
-pushd ./LCD-show
-  bash MHS35-show
-popd
-
-rm -rf ./LCD-show
 
 epoch_now=$(date +%s)
 mv /etc/dhcpcd.conf "/etc/${epoch_now}_dhcpcd.conf"
